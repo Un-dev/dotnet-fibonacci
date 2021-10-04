@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
+    <PackageReference Include="Mathieu.Degand.Fibonacci" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
