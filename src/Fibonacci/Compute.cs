@@ -47,7 +47,8 @@ namespace Fibonacci
                     dataContext.TFibonaccis.Add(new TFibonacci()
                     {
                         FibInput = inputInt,
-                        FibOutput = fibOutput
+                        FibOutput = fibOutput,
+                        FibCreatedTimestamp = DateTime.Now
                     });
                     list.Add(fibOutput);
                 }
