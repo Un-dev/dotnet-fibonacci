@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using Fibonacci;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,7 @@ var applicationConfig = applicationSection.Get<ApplicationConfig>();
 
 
 var services = new ServiceCollection();  
+services.AddDbContext<FibonacciDataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 services.AddTransient<FibonacciDataContext>();  
 services.AddTransient<Compute>();  
 services.AddLogging(configure => configure.AddConsole());
